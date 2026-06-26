@@ -24,6 +24,7 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            margin-right: 16px;
         }
 
         main {
@@ -42,6 +43,9 @@
     <form runat="server">
         <header>
             <a runat="server" href="~/">Sistema Segurados</a>
+            <a runat="server" href="~/Cadastro.aspx">Cadastro</a>
+            <a runat="server" href="~/Consulta.aspx">Consulta</a>
+            <a runat="server" href="~/Relatorio.aspx">Relatorio</a>
         </header>
 
         <main>
