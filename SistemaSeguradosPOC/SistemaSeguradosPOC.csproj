@@ -142,7 +142,7 @@
     <Compile Include="Relatorio.aspx.designer.cs">
       <DependentUpon>Relatorio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Repository\InsuredRepository.cs" />
+    <Compile Include="Repository\SeguradoRepository.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,7 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\dbo.Table.sql" />
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
