@@ -16,14 +16,6 @@ namespace SistemaSeguradosPOC.Repository
 			_connectionString = ConfigurationManager.ConnectionStrings["DBSistemasSegurados"].ConnectionString;
 		}
 
-        //public bool TestarConexao()
-        //{
-        //	using (var connection = new SqlConnection(_connectionString))
-        //	{
-        //		connection.Open();
-        //		return connection.State == ConnectionState.Open;
-        //	}
-        //}
         public bool TestarConexao()
         {
             try
@@ -44,12 +36,12 @@ namespace SistemaSeguradosPOC.Repository
 		{
 			using (SqlConnection connection = new SqlConnection(_connectionString))
 			{
-				string query = @"INSERT INTO Segurados (Nome, Cpf, Email, DataNascimento, ValorContribuicao) VALUES (@Nome, @Cpf,@Email ,@DataNascimento, @ValorContribuicao)";
+				string query = @"INSERT INTO Segurados (Nome, Cpf, Email, DataNascimento, ValorContribuicao) VALUES (@Nome, @Cpf, @Email ,@DataNascimento, @ValorContribuicao)";
 
 				using (var command = new SqlCommand(query, connection))
 				{
 					command.Parameters.Add("@Nome", SqlDbType.VarChar, 100).Value = segurado.Nome;
-					command.Parameters.Add("@Cpf", SqlDbType.VarChar, 11).Value = segurado.CPF;
+					command.Parameters.Add("@Cpf", SqlDbType.VarChar, 11).Value = segurado.Cpf;
 					command.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = segurado.Email;
                     command.Parameters.Add("@DataNascimento", SqlDbType.Date).Value = segurado.DataNascimento;
 					command.Parameters.Add("@ValorContribuicao", SqlDbType.Decimal).Value = segurado.ValorContribuicao;
@@ -67,7 +59,7 @@ namespace SistemaSeguradosPOC.Repository
 
 			using (SqlConnection connection = new SqlConnection(_connectionString))
 			{
-				string query = "SELECT Id, Nome, CPF, DataNascimento FROM Segurados";
+				string query = "SELECT Id, Nome, Cpf, Email, DataNascimento, ValorContribuicao FROM Segurados";
 			
 				using (var command = new SqlCommand(query, connection))
 				{
@@ -81,9 +73,11 @@ namespace SistemaSeguradosPOC.Repository
 							{
 								Id = Convert.ToInt32(reader["Id"]),
 								Nome = reader["Nome"].ToString(),
-								CPF = reader["Cpf"].ToString(),
-								DataNascimento = Convert.ToDateTime(reader["DataNascimento"])
-							};
+								Cpf = reader["Cpf"].ToString(),
+								Email = reader["Email"].ToString(),
+                                DataNascimento = Convert.ToDateTime(reader["DataNascimento"]),
+								ValorContribuicao = Convert.ToDecimal(reader["ValorContribuicao"])
+                            };
 
 							segurados.Add(segurado);
 						}

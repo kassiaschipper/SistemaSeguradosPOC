@@ -36,6 +36,7 @@
             color: #666;
             margin: 24px;
             padding-top: 16px;
+            background-color:red;
         }
     </style>
 </head>
