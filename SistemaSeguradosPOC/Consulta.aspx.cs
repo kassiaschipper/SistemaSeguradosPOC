@@ -13,5 +13,20 @@ namespace SistemaSeguradosPOC
         {
 
         }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var service = new Service.SeguradoService();
+                var segurados = service.BuscarTodosSegurados();
+                gvSegurados.DataSource = segurados;
+                gvSegurados.DataBind();
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text = "Erro ao consultar: " + ex.Message;
+            }
+        }
     }
 }

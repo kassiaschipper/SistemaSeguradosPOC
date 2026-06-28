@@ -15,24 +15,6 @@ namespace SistemaSeguradosPOC
     {
 
         /// <summary>
-        /// Controle btnTestarConexao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTestarConexao;
-
-        /// <summary>
-        /// Controle lblResultadoConexao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultadoConexao;
-
-        /// <summary>
         /// Controle txtNome.
         /// </summary>
         /// <remarks>
@@ -94,5 +76,23 @@ namespace SistemaSeguradosPOC
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensagem;
+
+        /// <summary>
+        /// Controle TextCpfExcluido.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextCpfExcluido;
+
+        /// <summary>
+        /// Controle btnExcluir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcluir;
     }
 }

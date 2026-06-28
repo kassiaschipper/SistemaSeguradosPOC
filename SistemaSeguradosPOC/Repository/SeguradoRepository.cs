@@ -86,5 +86,19 @@ namespace SistemaSeguradosPOC.Repository
 			}
 			return segurados;
 		}
-	}
+
+		public int ExcluirSegurado(string cpf)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "DELETE FROM Segurados WHERE Cpf = @Cpf";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@Cpf", SqlDbType.VarChar, 11).Value = cpf;
+                    connection.Open();
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+    }
 }

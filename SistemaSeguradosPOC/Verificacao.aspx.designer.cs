@@ -11,34 +11,27 @@ namespace SistemaSeguradosPOC
 {
 
 
-    public partial class Consulta
+    public partial class Verificacao
     {
 
         /// <summary>
-        /// Controle btnConsultar.
+        /// Controle btnTestarConexao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultar;
+        protected global::System.Web.UI.WebControls.Button btnTestarConexao;
 
         /// <summary>
-        /// Controle lblMensagem.
+        /// Controle lblResultadoConexao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagem;
+        protected global::System.Web.UI.WebControls.Label lblResultadoConexao;
 
-        /// <summary>
-        /// Controle gvSegurados.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSegurados;
+       
     }
 }

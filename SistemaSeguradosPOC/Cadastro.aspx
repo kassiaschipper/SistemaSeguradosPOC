@@ -3,10 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Cadastro de Segurados</h1>
 
-<asp:Button ID="btnTestarConexao" runat="server" Text="Testar conexao com banco" OnClick="btnTestarConexao_Click" />
-    <br />
-    <br />
-<asp:Label ID="lblResultadoConexao" runat="server" />
 <asp:Label runat="server" Text="Nome" />
 <br />
 <asp:TextBox ID="txtNome" runat="server" />
@@ -36,4 +32,11 @@
 <br /><br />
 
 <asp:Label ID="lblMensagem" runat="server" />
+
+<asp:Label runat="server" Text="Exclua o CPF:" />
+<br />
+<asp:TextBox ID="TextCpfExcluido" runat="server" />
+<br /><br />
+
+<asp:Button ID="btnExcluir" runat="server" Text="Excluir Segurado" OnClick="btnExcluir_Click"/>
 </asp:Content>

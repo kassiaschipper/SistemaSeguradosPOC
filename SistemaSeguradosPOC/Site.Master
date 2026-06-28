@@ -47,6 +47,7 @@
             <a runat="server" href="~/Cadastro.aspx">Cadastro</a>
             <a runat="server" href="~/Consulta.aspx">Consulta</a>
             <a runat="server" href="~/Relatorio.aspx">Relatorio</a>
+            <a runat="server" href="~/Verificacao.aspx">Verificação de Conexão</a>
         </header>
 
         <main>

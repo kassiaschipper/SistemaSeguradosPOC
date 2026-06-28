@@ -14,23 +14,6 @@ namespace SistemaSeguradosPOC
 
         }
 
-        protected void btnTestarConexao_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var repository = new SeguradoRepository();
-                var conectou = repository.TestarConexao();
-
-                lblResultadoConexao.Text = conectou
-                    ? "Conexao com o banco realizada com sucesso."
-                    : "Nao foi possivel abrir a conexao com o banco.";
-            }
-            catch (Exception ex)
-            {
-                lblResultadoConexao.Text = "Erro ao conectar: " + ex.Message;
-            }
-        }
-
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -52,6 +35,28 @@ namespace SistemaSeguradosPOC
             catch (Exception ex)
             {
                 lblMensagem.Text = "Erro ao cadastrar: " + ex.Message;
+            }
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var cpf = TextCpfExcluido.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(cpf))
+                    throw new Exception("Informe o CPF para exclusao.");
+
+                var repository = new SeguradoRepository();
+                var linhasAfetadas = repository.ExcluirSegurado(cpf);
+
+                lblMensagem.Text = linhasAfetadas > 0
+                    ? "Segurado excluido com sucesso."
+                    : "Nenhum segurado encontrado com esse CPF.";
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text = "Erro ao excluir: " + ex.Message;
             }
         }
     }

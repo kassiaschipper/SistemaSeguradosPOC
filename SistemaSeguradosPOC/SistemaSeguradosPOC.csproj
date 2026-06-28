@@ -105,6 +105,7 @@
     <Content Include="Global.asax" />
     <Content Include="Relatorio.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="Verificacao.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Verificacao.aspx.cs">
+      <DependentUpon>Verificacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verificacao.aspx.designer.cs">
+      <DependentUpon>Verificacao.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
