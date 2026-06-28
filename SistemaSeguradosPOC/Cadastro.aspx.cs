@@ -59,5 +59,36 @@ namespace SistemaSeguradosPOC
                 lblMensagem.Text = "Erro ao excluir: " + ex.Message;
             }
         }
+
+        protected void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var cpf = txtCpf.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(cpf))
+                    throw new Exception("Informe o CPF para atualização de dados.");
+
+                var segurado = new Segurado
+                {
+                    Nome = txtNome.Text.Trim(),
+                    Cpf = cpf,
+                    Email = txtEmail.Text.Trim(),
+                    DataNascimento = DateTime.Parse(txtDataNascimento.Text),
+                    ValorContribuicao = decimal.Parse(txtValorContribuicao.Text)
+                };
+
+                var service = new SeguradoService();
+                var linhasAfetadas = service.AtualizarDadosSegurado(segurado);
+
+                lblMensagem.Text = linhasAfetadas > 0
+                    ? "Segurado atualizado com sucesso."
+                    : "Nenhum segurado encontrado com esse CPF.";
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text = "Erro ao atualizar: " + ex.Message;
+            }
+        }
     }
 }

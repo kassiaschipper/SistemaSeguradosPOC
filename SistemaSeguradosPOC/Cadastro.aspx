@@ -31,12 +31,17 @@
 <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
 <br /><br />
 
-<asp:Label ID="lblMensagem" runat="server" />
+<asp:Button ID="btnAtualizar" runat="server" Text="Atualizar Dados" OnClick="btnAtualizar_Click"/>
+<br /><br />
 
+<asp:Label ID="lblMensagem" runat="server" />
+<br /><br />
 <asp:Label runat="server" Text="Exclua o CPF:" />
 <br />
 <asp:TextBox ID="TextCpfExcluido" runat="server" />
 <br /><br />
 
 <asp:Button ID="btnExcluir" runat="server" Text="Excluir Segurado" OnClick="btnExcluir_Click"/>
+
+
 </asp:Content>

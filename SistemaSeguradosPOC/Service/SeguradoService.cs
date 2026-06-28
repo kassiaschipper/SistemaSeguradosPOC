@@ -30,6 +30,18 @@ namespace SistemaSeguradosPOC.Service
         {
             return _seguradoRepository.BuscarTodosSegurados();
         }
+
+        public int AtualizarDadosSegurado(Segurado segurado)
+        {
+            if (string.IsNullOrWhiteSpace(segurado.Cpf))
+                throw new Exception("CPF obrigatório");
+            if (string.IsNullOrWhiteSpace(segurado.Nome))
+                throw new Exception("Nome obrigatório.");
+            if (segurado.ValorContribuicao <= 0)
+                throw new Exception("Valor de contribuição deve ser maior que zero.");
+
+            return _seguradoRepository.AtualizarDadosSegurado(segurado);
+        }
     }
 }
 

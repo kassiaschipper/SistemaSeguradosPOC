@@ -42,7 +42,7 @@ namespace SistemaSeguradosPOC.Repository
 				{
 					command.Parameters.Add("@Nome", SqlDbType.VarChar, 100).Value = segurado.Nome;
 					command.Parameters.Add("@Cpf", SqlDbType.VarChar, 11).Value = segurado.Cpf;
-					command.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = segurado.Email;
+					command.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = segurado.Email;
                     command.Parameters.Add("@DataNascimento", SqlDbType.Date).Value = segurado.DataNascimento;
 					command.Parameters.Add("@ValorContribuicao", SqlDbType.Decimal).Value = segurado.ValorContribuicao;
 
@@ -99,6 +99,27 @@ namespace SistemaSeguradosPOC.Repository
                     return command.ExecuteNonQuery();
                 }
             }
+        }
+
+		public int AtualizarDadosSegurado(Segurado segurado) 
+		{
+			using (SqlConnection connection = new SqlConnection(_connectionString))
+			{
+				string query = @"UPDATE Segurados SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento, ValorContribuicao = @ValorContribuicao WHERE Cpf = @Cpf";
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@Nome", SqlDbType.VarChar, 100).Value = segurado.Nome;
+                    command.Parameters.Add("@Cpf", SqlDbType.VarChar, 11).Value = segurado.Cpf;
+                    command.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = segurado.Email;
+                    command.Parameters.Add("@DataNascimento", SqlDbType.Date).Value = segurado.DataNascimento;
+                    command.Parameters.Add("@ValorContribuicao", SqlDbType.Decimal).Value = segurado.ValorContribuicao;
+
+                    connection.Open();
+                    return command.ExecuteNonQuery();
+                }
+            }
+
         }
     }
 }
